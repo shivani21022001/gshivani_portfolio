@@ -6,21 +6,21 @@ const About: React.FC = () => {
   const cards = [
     {
       icon: <Code size={28} />,
-      title: "Full Stack Development",
+      title: "ServiceNow Development",
       description:
-        "Skilled in building end-to-end web applications using technologies like React, Tailwind CSS, and Python. Comfortable working across both frontend and backend to create responsive, user-friendly interfaces and efficient server-side logic.",
+        "Experienced in designing, customizing, and supporting enterprise ServiceNow solutions across ITSM, CMDB, Service Catalog, workflow automation, and platform administration. Skilled in Business Rules, Client Scripts, Script Includes, UI Policies, UI Actions, Flow Designer, and ACLs.",
     },
     {
       icon: <BarChart3 size={28} />,
-      title: "ServiceNow Automation",
+      title: "Automation & Integrations",
       description:
-        "Experienced in ServiceNow development for ITSM, including Incident & Problem Management, Business Rules, Script Includes, Flow Designer, and ATF. Worked in Agile environments, collaborating with cross-functional teams to streamline infrastructure services and enhance resolution times.",
+        "Strong background in automating business processes, improving IT operations, and integrating ServiceNow with external enterprise systems using REST/SOAP APIs, IntegrationHub, and custom scripting. Experienced in ATF testing, regression testing, defect tracking, and release validation.",
     },
     {
       icon: <BookOpen size={28} />,
-      title: "Continuous Learning",
+      title: "Software Engineering & Learning",
       description:
-        "Driven by a passion for technology, I continuously expand my knowledge through academic learning, hands-on projects, and staying up-to-date with industry trends. I actively explore new tools, sharpen my skills, and apply them to create impactful, real-world solutions.",
+        "Passionate about continuous learning and building scalable technology solutions. Skilled in JavaScript, Python, Java, SQL, React.js, REST APIs, cloud technologies, Agile/Scrum, and machine learning concepts through academic projects and hands-on development experience.",
     },
   ];
 
@@ -44,8 +44,15 @@ const About: React.FC = () => {
 
           {/* About Paragraph */}
           <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed text-center mb-16">
-            I’m a Computer Science graduate student with professional experience in ServiceNow development and enterprise IT solutions. At Accenture, I worked on designing and optimizing ITSM systems that improved efficiency and reduced downtime.
-            I enjoy solving real-world problems through clean, scalable solutions — whether it’s designing workflows, analyzing data, or building intelligent applications.
+            I am a Software Engineer and ServiceNow Developer with over 4 years of
+            experience in enterprise application development, ITSM process optimization,
+            workflow automation, and platform integrations. I specialize in building
+            scalable ServiceNow solutions across Incident, Problem, Change, Service
+            Catalog, and CMDB modules, while using JavaScript, REST APIs, Flow Designer,
+            and Automated Test Framework to improve system performance and reliability.
+            Along with my ServiceNow expertise, I bring strong foundations in full-stack
+            development, cloud technologies, databases, Agile/Scrum collaboration, and
+            machine learning projects.
           </p>
 
           {/* Feature Cards */}

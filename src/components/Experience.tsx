@@ -25,7 +25,9 @@ type ExperienceItem = {
 const Experience: React.FC = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  const [flipState, setFlipState] = useState<Record<ExperienceItem["key"], boolean>>({
+  const [flipState, setFlipState] = useState<
+    Record<ExperienceItem["key"], boolean>
+  >({
     accenture: false,
     osu: false,
   });
@@ -38,49 +40,82 @@ const Experience: React.FC = () => {
     {
       key: "accenture",
       company: "Accenture",
-      location: "Hyderabad, India",
+      location: "USA / India",
       logo: accentureLogo,
       roles: [
         {
           title: "ServiceNow Developer",
-          period: "July 2022 - September 2024",
+          period: "Jan 2026 - Present",
           description: [
-            "Developed and enhanced ServiceNow ITSM solutions, helping reduce recurring incidents by 20%.",
-            "Built automated testing scripts and supported Agile development processes to ensure stable and reliable releases.",
-            "Troubleshot critical production issues and performed root cause analysis, reducing system downtime by 40%.",
-            "Improved workflows and system performance through automation and structured problem-solving.",
+            "Developed and customized enterprise-level ServiceNow solutions across ITSM, CMDB, Service Catalog, and workflow automation modules for Fortune 500 clients.",
+            "Designed and implemented Business Rules, Client Scripts, UI Policies, UI Actions, Script Includes, and Flow Designer workflows.",
+            "Integrated ServiceNow with external enterprise systems using REST/SOAP APIs, IntegrationHub, and custom scripting.",
+            "Supported Incident, Problem, Change, Request, and Asset Management processes while ensuring CMDB integrity and ITIL compliance.",
+            "Collaborated with business stakeholders and Agile/Scrum teams to deliver scalable ServiceNow applications.",
+            "Conducted ATF testing, regression testing, defect analysis, and release validation.",
           ],
-          skills: ["CSA", "CAD", "ITSM"],
+          skills: [
+            "ServiceNow",
+            "ITSM",
+            "CMDB",
+            "Flow Designer",
+            "REST APIs",
+            "IntegrationHub",
+            "ATF",
+            "Agile",
+          ],
         },
         {
-          title: "ServiceNow Developer Intern",
-          period: "June 2021 - December 2021",
+          title: "ServiceNow Developer",
+          period: "Jul 2020 - Sep 2024",
           description: [
-            "Assisted in designing and developing applications on the ServiceNow platform.",
-            "Developed and updated Business Rules, Client Scripts, and UI Policies using JavaScript.",
-            "Participated in requirement gathering discussions with project teams.",
-            "Supported testing activities, including documentation and issue tracking.",
+            "Designed and customized enterprise ServiceNow applications, increasing process efficiency by 30%.",
+            "Enhanced ITSM modules including Incident, Problem, Change, Service Catalog, and CMDB management.",
+            "Developed workflow automation using Business Rules, Client Scripts, Script Includes, Flow Designer, and REST API integrations.",
+            "Conducted ATF testing, regression testing, release validation, and defect analysis.",
+            "Provided Tier 2/3 production support through troubleshooting and root cause analysis.",
+            "Managed CMDB lifecycle processes and collaborated with Agile teams to drive sprint delivery.",
+            "Led Scrum ceremonies including sprint planning, stand-ups, retrospectives, and backlog grooming.",
           ],
-          skills: ["JavaScript", "Business Rules", "Client Scripts", "UI Policies"],
+          skills: [
+            "ServiceNow",
+            "JavaScript",
+            "Business Rules",
+            "Client Scripts",
+            "Flow Designer",
+            "REST APIs",
+            "CMDB",
+            "ITSM",
+            "Scrum",
+            "ATF",
+          ],
         },
       ],
     },
     {
       key: "osu",
       company: "OSU Foundation",
-      location: "Corvallis, OR",
+      location: "Corvallis, Oregon, USA",
       logo: osuLogo,
       roles: [
         {
-          title: "Finance Assistant (Part-time)",
-          period: "February 2025 - March 2026",
+          title: "Finance Assistant",
+          period: "Feb 2025 - Dec 2025",
           description: [
-            "Supported gift administration processes through accurate data entry and organized record management.",
-            "Managed document filing, scanning, and database updates to maintain audit-ready financial records.",
-            "Collaborated with finance teams to assist with administrative and coordination tasks.",
-            "Maintained confidentiality while handling sensitive financial information.",
+            "Supported gift administration and donor record management through accurate data entry and documentation.",
+            "Maintained financial records by organizing, scanning, filing, and updating databases.",
+            "Assisted finance and administrative teams with coordination and operational tasks.",
+            "Ensured confidentiality and compliance while handling sensitive donor and financial information.",
+            "Improved record accuracy and document accessibility through organized data management processes.",
           ],
-          skills: ["Microsoft Office", "Data Entry", "Finance Coordination"],
+          skills: [
+            "Financial Administration",
+            "Data Entry",
+            "Record Management",
+            "Microsoft Office",
+            "Documentation",
+            "Team Collaboration",
+          ],
         },
       ],
     },
@@ -109,7 +144,7 @@ const Experience: React.FC = () => {
             {experiences.map((exp) => (
               <div
                 key={exp.key}
-                className="relative w-full h-[300px] [perspective:1000px]"
+                className="relative w-full h-[380px] [perspective:1000px]"
               >
                 <div
                   onClick={() => handleFlip(exp.key)}
@@ -121,27 +156,25 @@ const Experience: React.FC = () => {
                       : "rotateY(0deg)",
                   }}
                 >
-                  {/* FRONT (Logo) */}
+                  {/* FRONT */}
                   <div
-                  className="absolute inset-0 flex items-center justify-center bg-white rounded-xl shadow-xl cursor-pointer group"
-                  style={{ backfaceVisibility: "hidden" }}
-                >
-                  {/* Logo */}
-                  <img
-                    src={exp.logo}
-                    alt={`${exp.company} Logo`}
-                    className="max-h-[40%] max-w-[80%] object-contain transition-transform duration-300 group-hover:scale-110"
-                  />
+                    className="absolute inset-0 flex items-center justify-center bg-white rounded-xl shadow-xl cursor-pointer group"
+                    style={{ backfaceVisibility: "hidden" }}
+                  >
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.company} Logo`}
+                      className="max-h-[40%] max-w-[80%] object-contain transition-transform duration-300 group-hover:scale-110"
+                    />
 
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 rounded-xl">
-                    <span className="text-white text-sm font-semibold tracking-wide">
-                      Click to flip
-                    </span>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 rounded-xl">
+                      <span className="text-white text-sm font-semibold tracking-wide">
+                        Click to flip
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                  {/* BACK (Roles) */}
+                  {/* BACK */}
                   <div
                     className="absolute inset-0 bg-gray-50 rounded-xl p-5 shadow-xl overflow-y-auto"
                     style={{
@@ -149,10 +182,11 @@ const Experience: React.FC = () => {
                       transform: "rotateY(180deg)",
                     }}
                   >
-                    {/* Company header */}
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <h3 className="text-lg font-bold text-gray-800">{exp.company}</h3>
+                        <h3 className="text-lg font-bold text-gray-800">
+                          {exp.company}
+                        </h3>
                         <p className="text-sm text-gray-600 flex items-center mt-1">
                           <MapPin size={16} className="mr-1" />
                           {exp.location}
@@ -161,12 +195,13 @@ const Experience: React.FC = () => {
                       <p className="text-xs text-gray-500">Click to flip back</p>
                     </div>
 
-                    {/* Roles list */}
                     <div className="space-y-6">
                       {exp.roles.map((role, idx) => (
                         <div
                           key={`${exp.key}-${idx}`}
-                          className={idx !== 0 ? "pt-4 border-t border-gray-200" : ""}
+                          className={
+                            idx !== 0 ? "pt-4 border-t border-gray-200" : ""
+                          }
                         >
                           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
                             <h4 className="text-base font-semibold text-gray-800">
@@ -199,7 +234,6 @@ const Experience: React.FC = () => {
                       ))}
                     </div>
                   </div>
-                  {/* END BACK */}
                 </div>
               </div>
             ))}

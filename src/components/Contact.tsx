@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
                   <div className="text-left">
                     <h4 className="font-medium text-gray-700">Email</h4>
                     <a href="mailto:gadipeshivani@gmail.com" className="text-blue-600 hover:underline">
-                      gadipeshivani@gmail.com
+                      shivanigadipe212@gmail.com
                     </a>
                   </div>
                 </motion.div>
@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="text-left">
                     <h4 className="font-medium text-gray-700">Location</h4>
-                    <p className="text-gray-600">Maryland Heights, Missouri, United States</p>
+                    <p className="text-gray-600">United States</p>
                   </div>
                 </motion.div>
               </div>

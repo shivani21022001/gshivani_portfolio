@@ -94,15 +94,6 @@ const Hero: React.FC = () => {
             >
               View My Work
             </a>
-
-            <a
-              href="/All_SHIVANI GADIPE.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300"
-            >
-              View Resume
-            </a>
           </motion.div>
 
           {/* Social Icons */}
@@ -131,7 +122,7 @@ const Hero: React.FC = () => {
             </a>
 
             <a
-              href="mailto:gadipeshivani@gmail.com"
+              href="mailto:shivanigadipe212@gmail.com"
               className="text-gray-600 hover:text-blue-600 transition"
             >
               <Mail size={24} />
