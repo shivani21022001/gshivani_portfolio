@@ -5,7 +5,8 @@ import { Calendar, MapPin } from "lucide-react";
 
 // Logos from public folder
 import accentureLogo from "/Accenture-logo.jpg";
-import osuLogo from "/osu-foundation-logo.png";
+import sterliteLogo from "/Sterlite_Technologies_logo.jpg";
+import capgeminiLogo from "/Capgemini_Logo.png";
 
 type Role = {
   title: string;
@@ -15,10 +16,10 @@ type Role = {
 };
 
 type ExperienceItem = {
-  key: "accenture" | "osu";
+  key: "accenture" | "sterlite" | "capgemini";
   company: string;
   location: string;
-  logo: string;
+  logo?: string;
   roles: Role[];
 };
 
@@ -29,7 +30,8 @@ const Experience: React.FC = () => {
     Record<ExperienceItem["key"], boolean>
   >({
     accenture: false,
-    osu: false,
+    sterlite: false,
+    capgemini: false,
   });
 
   const handleFlip = (key: ExperienceItem["key"]) => {
@@ -40,42 +42,99 @@ const Experience: React.FC = () => {
     {
       key: "accenture",
       company: "Accenture",
-      location: "USA / India",
+      location: "USA",
       logo: accentureLogo,
       roles: [
         {
-          title: "ServiceNow Developer",
+          title: "Senior ServiceNow Developer",
           period: "Jan 2026 - Present",
           description: [
-            "Developed and customized enterprise-level ServiceNow solutions across ITSM, CMDB, Service Catalog, and workflow automation modules for Fortune 500 clients.",
-            "Designed and implemented Business Rules, Client Scripts, UI Policies, UI Actions, Script Includes, and Flow Designer workflows.",
-            "Integrated ServiceNow with external enterprise systems using REST/SOAP APIs, IntegrationHub, and custom scripting.",
-            "Supported Incident, Problem, Change, Request, and Asset Management processes while ensuring CMDB integrity and ITIL compliance.",
-            "Collaborated with business stakeholders and Agile/Scrum teams to deliver scalable ServiceNow applications.",
-            "Conducted ATF testing, regression testing, defect analysis, and release validation.",
+            "Developed and deployed enterprise ServiceNow ITSM, ITOM, HRSD, CSM, CMDB, and Service Catalog solutions using App Engine Studio, Flow Designer, UI Builder, IntegrationHub, and Employee Center, improving operational efficiency by 40%.",
+            "Built scalable Business Rules, Client Scripts, Script Includes, UI Policies, UI Actions, ACLs, Glide API, Service Portal, and Scoped Applications using JavaScript (ES6+), reducing manual effort by 50%.",
+            "Designed secure REST API, Scripted REST API, SOAP API, IntegrationHub, MID Server, OAuth 2.0, SAML SSO, Azure AD, and third-party integrations, enabling seamless connectivity across 20+ enterprise systems.",
+            "Implemented Discovery, Service Mapping, Service Graph Connector, CMDB, and Asset Management solutions, improving configuration data accuracy to 98% and strengthening IT operations.",
+            "Delivered intelligent automation using AI Agent Studio, Now Assist, AI Search, Virtual Agent, Performance Analytics, Predictive Intelligence, and Generative AI Integration, reducing incident resolution time by 35%.",
+            "Developed modern Employee Center, UI Builder, Service Portal, Knowledge Management, and Service Catalog solutions, increasing employee self-service adoption and improving user satisfaction by 30%.",
+            "Improved release quality using Automated Test Framework (ATF), Functional Testing, Regression Testing, UAT, Agile/Scrum, Azure DevOps, Git, Jenkins, and CI/CD Pipelines, reducing production defects by 45%.",
+            "Collaborated with architects, product owners, and Agile teams to deliver enterprise ServiceNow solutions while performing code reviews, technical mentoring, performance optimization, security governance (RBAC & ACLs), and platform support for 50,000+ users.",
           ],
           skills: [
             "ServiceNow",
             "ITSM",
+            "ITOM",
+            "HRSD",
+            "CSM",
             "CMDB",
+            "Service Catalog",
+            "App Engine Studio",
             "Flow Designer",
-            "REST APIs",
+            "UI Builder",
             "IntegrationHub",
+            "JavaScript",
+            "REST APIs",
+            "SAML SSO",
+            "Azure AD",
+            "AI Agent Studio",
             "ATF",
+            "CI/CD",
+          ],
+        },
+      ],
+    },
+    {
+      key: "sterlite",
+      company: "Sterlite India",
+      location: "India",
+      logo: sterliteLogo,
+      roles: [
+        {
+          title: "ServiceNow Technical Consultant",
+          period: "Jul 2022 - Aug 2024",
+          description: [
+            "Gathered business requirements and delivered ServiceNow ITSM, HRSD, CSM, CMDB, Service Catalog, and Knowledge Management solutions, improving service delivery by 35%.",
+            "Customized the ServiceNow Platform using Business Rules, Client Scripts, Script Includes, UI Policies, UI Actions, ACLs, Glide API, Flow Designer, and App Engine Studio, reducing manual effort by 40%.",
+            "Developed secure integrations using REST APIs, SOAP APIs, IntegrationHub, MID Server, OAuth 2.0, SAML SSO, LDAP, JSON, XML, and Azure AD, connecting enterprise applications seamlessly.",
+            "Implemented Discovery, Service Mapping, Service Graph Connector, CMDB, Asset Management, UI Builder, Employee Center, and Virtual Agent, improving CMDB accuracy to 98%.",
+            "Built intelligent workflows using AI Agent Studio, Now Assist, AI Search, Performance Analytics, Predictive Intelligence, Workflow Automation, and Generative AI Integration, reducing request resolution time by 30%.",
+            "Delivered high-quality releases using ATF, Functional Testing, Regression Testing, UAT, Azure DevOps, Git, Jenkins, Agile, and CI/CD Pipelines, reducing production issues by 40%.",
+            "Partnered with architects and Agile teams to deliver enterprise ServiceNow solutions, performing technical consulting, code reviews, stakeholder management, RBAC, ACLs, and platform optimization while supporting large-scale implementations.",
+          ],
+          skills: [
+            "ServiceNow",
+            "ITSM",
+            "HRSD",
+            "CSM",
+            "CMDB",
+            "Knowledge Management",
+            "Flow Designer",
+            "App Engine Studio",
+            "IntegrationHub",
+            "API Integrations",
+            "AI Agent Studio",
+            "ATF",
+            "Azure DevOps",
+            "CI/CD",
             "Agile",
           ],
         },
+      ],
+    },
+    {
+      key: "capgemini",
+      company: "Capgemini India",
+      location: "India",
+      logo: capgeminiLogo,
+      roles: [
         {
           title: "ServiceNow Developer",
-          period: "Jul 2020 - Sep 2024",
+          period: "Jun 2019 - Jun 2022",
           description: [
-            "Designed and customized enterprise ServiceNow applications, increasing process efficiency by 30%.",
-            "Enhanced ITSM modules including Incident, Problem, Change, Service Catalog, and CMDB management.",
-            "Developed workflow automation using Business Rules, Client Scripts, Script Includes, Flow Designer, and REST API integrations.",
-            "Conducted ATF testing, regression testing, release validation, and defect analysis.",
-            "Provided Tier 2/3 production support through troubleshooting and root cause analysis.",
-            "Managed CMDB lifecycle processes and collaborated with Agile teams to drive sprint delivery.",
-            "Led Scrum ceremonies including sprint planning, stand-ups, retrospectives, and backlog grooming.",
+            "Developed ServiceNow ITSM, HRSD, CMDB, Service Catalog, and Knowledge Management solutions using JavaScript, Business Rules, Client Scripts, Script Includes, UI Policies, and Glide API, improving workflow efficiency by 30%.",
+            "Built Flow Designer, Service Catalog, Record Producers, and Catalog Client Scripts, automating business processes and reducing manual effort by 35%.",
+            "Developed secure REST APIs, SOAP APIs, IntegrationHub, MID Server, JSON, XML, and OAuth 2.0 integrations, enabling seamless connectivity across enterprise applications.",
+            "Configured Discovery, Service Mapping, CMDB, Asset Management, UI Builder, Employee Center, and Service Portal, improving configuration accuracy to 98% and enhancing user experience.",
+            "Customized the platform using ACLs, UI Actions, Import Sets, Transform Maps, Scheduled Jobs, Fix Scripts, Email Notifications, and Scoped Applications, delivering scalable and secure ServiceNow solutions.",
+            "Executed ATF, Functional Testing, Regression Testing, UAT, Agile, Azure DevOps, Git, Jenkins, and CI/CD Pipelines, reducing production defects by 40% while supporting successful enterprise deployments.",
           ],
           skills: [
             "ServiceNow",
@@ -84,37 +143,13 @@ const Experience: React.FC = () => {
             "Client Scripts",
             "Flow Designer",
             "REST APIs",
+            "IntegrationHub",
             "CMDB",
-            "ITSM",
-            "Scrum",
+            "UI Builder",
             "ATF",
-          ],
-        },
-      ],
-    },
-    {
-      key: "osu",
-      company: "OSU Foundation",
-      location: "Corvallis, Oregon, USA",
-      logo: osuLogo,
-      roles: [
-        {
-          title: "Finance Assistant",
-          period: "Feb 2025 - Dec 2025",
-          description: [
-            "Supported gift administration and donor record management through accurate data entry and documentation.",
-            "Maintained financial records by organizing, scanning, filing, and updating databases.",
-            "Assisted finance and administrative teams with coordination and operational tasks.",
-            "Ensured confidentiality and compliance while handling sensitive donor and financial information.",
-            "Improved record accuracy and document accessibility through organized data management processes.",
-          ],
-          skills: [
-            "Financial Administration",
-            "Data Entry",
-            "Record Management",
-            "Microsoft Office",
-            "Documentation",
-            "Team Collaboration",
+            "Azure DevOps",
+            "CI/CD",
+            "Agile",
           ],
         },
       ],
@@ -161,11 +196,17 @@ const Experience: React.FC = () => {
                     className="absolute inset-0 flex items-center justify-center bg-white rounded-xl shadow-xl cursor-pointer group"
                     style={{ backfaceVisibility: "hidden" }}
                   >
-                    <img
-                      src={exp.logo}
-                      alt={`${exp.company} Logo`}
-                      className="max-h-[40%] max-w-[80%] object-contain transition-transform duration-300 group-hover:scale-110"
-                    />
+                    {exp.logo ? (
+                      <img
+                        src={exp.logo}
+                        alt={`${exp.company} Logo`}
+                        className="max-h-[40%] max-w-[80%] object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center w-full h-full text-center px-4 text-xl font-semibold text-gray-700 bg-gray-100 rounded-xl">
+                        {exp.company}
+                      </div>
+                    )}
 
                     <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 rounded-xl">
                       <span className="text-white text-sm font-semibold tracking-wide">
